@@ -1,0 +1,31 @@
+# inventario.yaml
+
+all:
+  children:
+    # === GRUPOS DE HOSTS ===
+    webservers:
+      hosts:
+        web1.dominio.com:
+          ansible_host: 192.168.1.50 # Variável de host
+        web2.dominio.com:
+
+    dbservers:
+      hosts:
+        db1.dominio.com:
+        # === SIMPLIFICAÇÃO DE RANGE (não nativa como no INI) ===
+        # Em YAML, você listaria explicitamente ou usaria automação
+        db-01.dominio.com:
+        db-02.dominio.com:
+
+    # === GRUPOS ANINHADOS ===
+    datacenter_sp:
+      children:
+        webservers:
+        dbservers:
+
+    # === GRUPO "ungrouped" ===
+    # Hosts que não estão em nenhum grupo ficam aqui
+    ungrouped:
+      hosts:
+        servidor_isolado.dominio.com:
+        192.168.1.100:
