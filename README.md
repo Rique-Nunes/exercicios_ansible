@@ -1,6 +1,6 @@
 # ⚙️ Meus Estudos de Ansible
 
-Repositório com playbooks, roles e configurações da minha jornada de aprendizado em automação com Ansible.
+Repositório com *playbooks*, *roles* e configurações da minha jornada de aprendizado em automação com **Ansible**.
 
 ![Ansible Banner](https://www.ansible.com/hs-fs/hubfs/images/social-sharing-cards/ansible-automation-platform-social-card.png?width=1200&name=ansible-automation-platform-social-card.png)
 
@@ -12,9 +12,35 @@ Repositório com playbooks, roles e configurações da minha jornada de aprendiz
 ---
 
 ## 📂 Estrutura do Projeto
-.
-├── inventories/        # Arquivos de inventário (staging, production)
-├── playbooks/          # Playbooks principais
-├── roles/              # Estrutura de papéis reutilizáveis
-├── group_vars/         # Variáveis de grupo
-└── ansible.cfg         # Configurações padrão do Ansible
+
+```
+inventories/        # Arquivos de inventário (staging, production)
+playbooks/          # Playbooks principais
+roles/              # Estrutura de papéis reutilizáveis
+group_vars/         # Variáveis de grupo
+ansible.cfg         # Configurações padrão do Ansible
+```
+
+---
+
+## 🚀 Objetivo
+Explorar e documentar boas práticas de automação com **Ansible**, criando uma base sólida para:
+- Padronizar ambientes.
+- Automatizar tarefas repetitivas.
+- Reutilizar papéis e variáveis.
+- Evoluir para cenários com **CI/CD** e **Infra as Code (IaC)**.
+
+---
+
+## 🧭 Como executar (exemplo)
+```bash
+# rodar playbook principal (inventório staging)
+ansible-playbook -i inventories/staging site.yml
+```
+
+---
+
+## 🧠 Referências
+- [Documentação oficial do Ansible](https://docs.ansible.com/)
+- [Guia de boas práticas do Ansible Galaxy](https://galaxy.ansible.com/docs/)
+- [Exemplos de Playbooks no GitHub](https://github.com/ansible/ansible-examples)
