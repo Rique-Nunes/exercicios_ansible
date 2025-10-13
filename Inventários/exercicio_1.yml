@@ -1,0 +1,6 @@
+all:
+  children:
+    webservers:
+      hosts:
+        servidor01:
+          ansible_host: 10.128.0.11
