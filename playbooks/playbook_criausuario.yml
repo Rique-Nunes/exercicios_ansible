@@ -1,0 +1,9 @@
+---
+- name: Configurar um usuário
+  hosts: webservers
+  tasks:
+    - name: usuario newbie com uid 4000
+      user:
+        name: chewbacka
+        uid: 3900
+        state: present

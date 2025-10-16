@@ -1,0 +1,35 @@
+Comandos únicos e rápidos (Ad Hoc)
+
+ansible [hosts ou grupos de hosts] -m command -a ' [comando entre aspas simples] ‘
+
+<------------------------------------------------------------------------------------>
+
+criação de usuário
+
+ansible -m user -a 'name=newbie uid=4000 state=present' servidor01
+
+<------------------------------------------------------------------------------------>
+
+Executa o comando através de um interpretador de shell (por padrão, /bin/sh)
+
+ansible webservers -m shell -a "cat /etc/passwd | grep root"
+
+<------------------------------------------------------------------------------------>
+
+Comando para copiar um arquivo para hosts alvo
+
+ansible webservers -m copy -a "src=[origem] dest=[destino] owner=www-data group=www-data mode=0644"
+
+(sobre o usuário dono é opcional, mais se o escalonamento para root tiver ligado, o dono do arquivo vai ser o root)
+(Só um arquivo por vez)
+
+<------------------------------------------------------------------------------------>
+
+EXECUÇÃO DE PLAYBOOK
+
+(Verificação se a sintaxe do playbook funciona)
+ansible-playbook playbook_criausuario.yml --check
+
+(se tirar o --check o playbook roda)
+
+<------------------------------------------------------------------------------------>
