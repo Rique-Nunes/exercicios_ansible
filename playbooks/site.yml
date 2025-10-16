@@ -1,0 +1,14 @@
+    ---
+    - name: Configura e atualiza o servidor web
+      hosts: webservers # Este nome vem do seu inventário!
+      become: true      # Já que configuramos no ansible.cfg, ele sabe usar o sudo.
+
+      tasks:
+        - name: Atualiza o cache de pacotes (apt update)
+          ansible.builtin.apt:
+            update_cache: yes
+            cache_valid_time: 3600 # Não atualiza de novo se a última vez foi a menos de 1h
+
+        - name: Garante que todos os pacotes estão atualizados (apt upgrade)
+          ansible.builtin.apt:
+            upgrade: dist # 'dist' é mais seguro que 'full' ou 'yes'
