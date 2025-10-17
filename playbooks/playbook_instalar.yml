@@ -1,0 +1,8 @@
+---
+- hosts: all
+  became: true
+  tasks:
+    - name: Grantir que o Nginx esteja instalado na versão mais recente
+      apt:
+        name: nginx
+        state: latest
