@@ -12,3 +12,5 @@
       - name: Garante que todos os pacotes estão atualizados (apt upgrade)
         ansible.builtin.apt:
           upgrade: dist # 'dist' é mais seguro que 'full' ou 'yes'
+        environment:
+          DEBIAN_FRONTEND: noninteractive

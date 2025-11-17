@@ -3,4 +3,4 @@ all:
     webservers:
       hosts:
         servidor01:
-          ansible_host: 10.128.0.11
+          ansible_host: 10.0.0.2
